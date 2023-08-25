@@ -1,42 +1,27 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strlcpy.c                                       :+:      :+:    :+:   */
+/*   ft_tolower.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: tsongtra <tsongtra@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/08/25 10:15:50 by tsongtra          #+#    #+#             */
-/*   Updated: 2023/08/25 16:57:26 by tsongtra         ###   ########.fr       */
+/*   Created: 2023/08/25 17:12:18 by tsongtra          #+#    #+#             */
+/*   Updated: 2023/08/25 17:18:35 by tsongtra         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
-
-size_t	ft_strlcpy(char *dst, const char *src, size_t size)
+int	ft_tolower(int c)
 {
-	size_t	i;
-
-	i = 0;
-	if (size > 0)
+	if (c >= 65 && c <= 90)
 	{
-		while (src[i] && i < (size - 1))
-		{
-			dst[i] = src[i];
-			i++;
-		}
-		dst[i] = '\0';
+		c += 32;
 	}
-	while (src[i] != '\0')
-		i++;
-	return (i);
+	return (c);
 }
 
-// #include <stdio.h>
+// #include<stdio.h>
 
 // int	main()
 // {
-// 	char t[] = "test3";
-// 	char a[] = "54";
-// 	ft_strlcpy(a,t,4);
-// 	printf("%s",a);
+// 	printf("%c",ft_tolower('9'));
 // }
