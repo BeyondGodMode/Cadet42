@@ -6,13 +6,13 @@
 /*   By: tsongtra <tsongtra@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/24 19:36:59 by tsongtra          #+#    #+#             */
-/*   Updated: 2023/08/25 10:44:24 by tsongtra         ###   ########.fr       */
+/*   Updated: 2023/08/25 22:25:34 by tsongtra         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-size_t	ft_strlen(char *str)
+size_t	ft_strlen(const char *str)
 {
 	size_t	count;
 

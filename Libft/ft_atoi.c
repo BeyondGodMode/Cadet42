@@ -6,7 +6,7 @@
 /*   By: tsongtra <tsongtra@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/25 17:21:23 by tsongtra          #+#    #+#             */
-/*   Updated: 2023/08/25 18:21:55 by tsongtra         ###   ########.fr       */
+/*   Updated: 2023/08/25 18:34:53 by tsongtra         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,15 +40,15 @@ int	ft_atoi(char *str)
 	return (count * sign);
 }
 
-#include <stdio.h>
-#include<stdlib.h>
+// #include <stdio.h>
+// #include<stdlib.h>
 
-int main()
-{
-	char t[] = "  \t\n +124 + 3";
-	int a = atoi(t);
-	printf("%d\n",a);
-	a = ft_atoi(t);
-	printf("%d",a);
-}
+// int main()
+// {
+// 	char t[] = "  \t\n +124 + 3";
+// 	int a = atoi(t);
+// 	printf("%d\n",a);
+// 	a = ft_atoi(t);
+// 	printf("%d",a);
+// }
 
