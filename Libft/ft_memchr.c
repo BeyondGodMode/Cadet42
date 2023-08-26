@@ -6,7 +6,7 @@
 /*   By: tsongtra <tsongtra@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/26 11:19:38 by tsongtra          #+#    #+#             */
-/*   Updated: 2023/08/26 14:11:00 by tsongtra         ###   ########.fr       */
+/*   Updated: 2023/08/27 02:22:40 by tsongtra         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@
 void	*ft_memchr(const void *s, int c, size_t n)
 {
 	const unsigned char	*p;
-	int					i;
+	size_t				i;
 
 	p = s;
 	i = 0;

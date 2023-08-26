@@ -6,7 +6,7 @@
 /*   By: tsongtra <tsongtra@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/25 10:05:00 by tsongtra          #+#    #+#             */
-/*   Updated: 2023/08/26 11:18:53 by tsongtra         ###   ########.fr       */
+/*   Updated: 2023/08/27 02:23:08 by tsongtra         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@ void	*ft_memset(void *ptr, int c, size_t len)
 {
 	unsigned char	*p;
 	unsigned char	val;
-	int				i;
+	size_t			i;
 
 	p = ptr;
 	val = (unsigned char)c;

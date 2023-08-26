@@ -6,7 +6,7 @@
 /*   By: tsongtra <tsongtra@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/26 14:25:40 by tsongtra          #+#    #+#             */
-/*   Updated: 2023/08/26 14:43:42 by tsongtra         ###   ########.fr       */
+/*   Updated: 2023/08/27 02:23:54 by tsongtra         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,7 +30,6 @@ char	*ft_strdup(const char *s1)
 // int	main()
 // {
 // 	const char *original = "Hello, World!";
-    
 //     // Using the standard strdup function
 //     char *duplicate_std = strdup(original);
 //     if (duplicate_std) {
