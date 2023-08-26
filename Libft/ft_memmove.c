@@ -6,7 +6,7 @@
 /*   By: tsongtra <tsongtra@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/26 13:28:05 by tsongtra          #+#    #+#             */
-/*   Updated: 2023/08/26 14:04:25 by tsongtra         ###   ########.fr       */
+/*   Updated: 2023/08/27 01:43:50 by tsongtra         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -49,7 +49,6 @@ void	*ft_memmove(void *dst, const void *src, size_t len)
 // 	char source[] = "Hello, World!";
 //     char destination[20];
 // 	char destination2[20];
-	
 //     memmove(destination, source, sizeof(source));
 //     printf("Using memmove (Standard): %s\n", destination);
 //     ft_memmove(destination2, source, sizeof(source));

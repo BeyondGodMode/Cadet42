@@ -6,7 +6,7 @@
 /*   By: tsongtra <tsongtra@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/26 23:22:28 by tsongtra          #+#    #+#             */
-/*   Updated: 2023/08/26 23:55:02 by tsongtra         ###   ########.fr       */
+/*   Updated: 2023/08/27 00:48:52 by tsongtra         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,10 +22,10 @@ void	ft_putendl_fd(char *s, int fd)
 	write(fd, "\n", 1);
 }
 
-int	main()
-{
-	char	t[] = "Hello";
-	char	g[] = "World";
-	ft_putendl_fd(t, 1);
-	ft_putendl_fd(g, 1);
-}
+// int	main()
+// {
+// 	char	t[] = "Hello";
+// 	char	g[] = "World";
+// 	ft_putendl_fd(t, 1);
+// 	ft_putendl_fd(g, 1);
+// }
