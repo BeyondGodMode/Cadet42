@@ -6,7 +6,7 @@
 /*   By: tsongtra <tsongtra@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/25 17:21:23 by tsongtra          #+#    #+#             */
-/*   Updated: 2023/08/26 09:55:39 by tsongtra         ###   ########.fr       */
+/*   Updated: 2023/08/26 22:49:55 by tsongtra         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,7 +41,7 @@ int	ft_atoi(const char *str)
 }
 
 // #include <stdio.h>
-// #include<stdlib.h>
+// #include <stdlib.h>
 
 // int main()
 // {
