@@ -1,33 +1,38 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strlen.c                                        :+:      :+:    :+:   */
+/*   ft_strchr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: tsongtra <tsongtra@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/08/24 19:36:59 by tsongtra          #+#    #+#             */
-/*   Updated: 2023/08/25 22:34:19 by tsongtra         ###   ########.fr       */
+/*   Created: 2023/08/26 00:06:01 by tsongtra          #+#    #+#             */
+/*   Updated: 2023/08/26 09:55:00 by tsongtra         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-size_t	ft_strlen(const char *str)
+char	*ft_strchr(const char *s, int c)
 {
-	size_t	count;
-
-	count = 0;
-	while (str[count] != '\0')
+	while (*s != '\0')
 	{
-		count++;
+		if (*s == c)
+			return ((char *)s);
+		s++;
 	}
-	return (count);
+	return (NULL);
 }
 
 // #include <stdio.h>
+// #include <string.h>
 
-// int	main()
+// int main()
 // {
-// 	char t[] = "test46";
-// 	printf("%zu",ft_strlen(t));
+//     const char *string = "Hello, World!";
+//     char target = 'W';
+//     char *result_std = strchr(string, target);
+// 	char *result_std2 = ft_strchr(string, target);
+
+// 	printf("Ori = %s\n",result_std);
+// 	printf("ft = %s\n",result_std2);
 // }

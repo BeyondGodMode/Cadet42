@@ -6,13 +6,13 @@
 /*   By: tsongtra <tsongtra@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/25 17:21:23 by tsongtra          #+#    #+#             */
-/*   Updated: 2023/08/25 18:34:53 by tsongtra         ###   ########.fr       */
+/*   Updated: 2023/08/26 09:55:39 by tsongtra         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int	ft_atoi(char *str)
+int	ft_atoi(const char *str)
 {
 	int	i;
 	int	sign;
@@ -51,4 +51,3 @@ int	ft_atoi(char *str)
 // 	a = ft_atoi(t);
 // 	printf("%d",a);
 // }
-
