@@ -6,7 +6,7 @@
 /*   By: tsongtra <tsongtra@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/24 13:49:38 by tsongtra          #+#    #+#             */
-/*   Updated: 2023/09/24 14:34:36 by tsongtra         ###   ########.fr       */
+/*   Updated: 2023/09/24 15:06:30 by tsongtra         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,7 @@ void	ft_striteri(char *s, void (*f)(unsigned int, char*))
 	{
 		i = 0;
 		while (*s)
-			f(i++, s++);
+			(*f)(i++, s++);
 	}
 }
 

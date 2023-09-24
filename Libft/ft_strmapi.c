@@ -6,7 +6,7 @@
 /*   By: tsongtra <tsongtra@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/24 13:26:38 by tsongtra          #+#    #+#             */
-/*   Updated: 2023/09/24 13:49:05 by tsongtra         ###   ########.fr       */
+/*   Updated: 2023/09/24 15:06:35 by tsongtra         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,7 +26,7 @@ char	*ft_strmapi(char const *s, char (*f)(unsigned int, char))
 	i = 0;
 	res = str;
 	while (*s != '\0')
-		*str++ = f(i++, *s++);
+		*str++ = (*f)(i++, *s++);
 	*str = '\0';
 	return (res);
 }

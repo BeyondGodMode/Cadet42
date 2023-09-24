@@ -6,7 +6,7 @@
 /*   By: tsongtra <tsongtra@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/21 12:45:26 by tsongtra          #+#    #+#             */
-/*   Updated: 2023/09/21 12:45:28 by tsongtra         ###   ########.fr       */
+/*   Updated: 2023/09/24 15:07:48 by tsongtra         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -79,6 +79,8 @@ size_t			ft_strlcat(char *dst, const char *src, size_t size);
 size_t			ft_strlcpy(char *dst, const char *src, size_t size);
 
 size_t			ft_strlen(const char *s);
+
+void			ft_striteri(char *s, void (*f)(unsigned int, char*));
 
 char			*ft_strmapi(char const *s, char (*f)(unsigned int, char));
 
