@@ -1,46 +1,47 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_substr.c                                        :+:      :+:    :+:   */
+/*   ft_strjoin.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: tsongtra <tsongtra@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/09/22 14:17:15 by tsongtra          #+#    #+#             */
-/*   Updated: 2023/09/23 13:57:03 by tsongtra         ###   ########.fr       */
+/*   Created: 2023/09/22 14:57:26 by tsongtra          #+#    #+#             */
+/*   Updated: 2023/09/22 15:47:43 by tsongtra         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	*ft_substr(char const *s, unsigned int start, size_t len)
+char	*ft_strjoin(char const *s1, char const *s2)
 {
 	char	*str;
-	char	*ptr;
+	size_t	i;
+	size_t	j;
 
-	if (s == NULL)
+	if (s1 == NULL || s2 == NULL)
 		return (NULL);
-	if (start > ft_strlen(s))
-		len = 0;
-	else if (len > (ft_strlen(s) - start))
-		len = ft_strlen(s) - start;
-	str = (char *)malloc((len + 1) * sizeof(char));
+	str = (char *)malloc((ft_strlen(s1) + ft_strlen(s2)+ 1) * sizeof(char));
 	if (str == NULL)
 		return (NULL);
-	s += start;
-	ptr = str;
-	*(str + len) = '\0';
-	while (len-- && *s)
-		*str++ = *s++;
-	return (ptr);
+	i = 0;
+	j = 0;
+	while (s1[j] != '\0')
+		str[i++] = s1[j++];
+	j = 0;
+	while (s2[j] != '\0')
+		str[i++] = s2[j++];
+	str[i] = '\0';
+	return (str);
 }
 
 // #include <stdio.h>
-// #include <string.h>
 
 // int	main()
 // {
-// 	char	t[] = "Hello World!";
-// 	char	*str = ft_substr(t, 6, 5);
-// 	printf("Ft = %s",str);
+// 	char	s1[] = "Hello ";
+// 	char	s2[] = "World";
+// 	char	*str = ft_strjoin(s1,s2);
+
+// 	printf("FTstrjoin S1 and S2 = %s",str);
 // 	return (0);
 // }

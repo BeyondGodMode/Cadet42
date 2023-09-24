@@ -6,7 +6,7 @@
 /*   By: tsongtra <tsongtra@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/26 09:58:34 by tsongtra          #+#    #+#             */
-/*   Updated: 2023/08/26 10:12:42 by tsongtra         ###   ########.fr       */
+/*   Updated: 2023/09/21 15:29:48 by tsongtra         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,14 +16,15 @@ char	*ft_strrchr(const char *s, int c)
 {
 	const char	*last;
 
-	if (c == '\0')
-		return (NULL);
+	last = 0;
 	while (*s != '\0')
 	{
-		if (*s == c)
+		if (*s == (unsigned char)c)
 			last = s;
 		s++;
 	}
+	if (c == '\0')
+		return ((char *)s);
 	return ((char *)last);
 }
 
@@ -32,12 +33,12 @@ char	*ft_strrchr(const char *s, int c)
 
 // int	main()
 // {
-// 	  const char *string = "Hello, World!";
+// 	char * empty = (char*)calloc(1, 1);
+// 	const char *string = "tripouille";
 //     char target = 'l';
-
 //     // Using the standard strrchr function
-//     char *result_std = strrchr(string, target);
-// 	char *result_std2 = ft_strrchr(string, target);
+//     char *result_std = strrchr(empty, 'V');
+// 	char *result_std2 = ft_strrchr(empty, 'V');
 // 	printf("Ori = %s\n",result_std);
 // 	printf("ft = %s\n",result_std2);
 // }

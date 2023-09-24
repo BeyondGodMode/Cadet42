@@ -6,7 +6,7 @@
 /*   By: tsongtra <tsongtra@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/26 14:15:55 by tsongtra          #+#    #+#             */
-/*   Updated: 2023/08/26 14:25:15 by tsongtra         ###   ########.fr       */
+/*   Updated: 2023/09/21 16:58:39 by tsongtra         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,10 +17,14 @@ void	*ft_calloc(size_t count, size_t size)
 	size_t	total;
 	void	*ptr;
 
+	if (count != 0 && size != 0 && count > (4294967295 / size))
+		return (NULL);
 	total = count * size;
 	ptr = (void *)malloc(total);
 	if (ptr != NULL)
 		ft_memset(ptr, 0, total);
+	else
+		return (NULL);
 	return (ptr);
 }
 

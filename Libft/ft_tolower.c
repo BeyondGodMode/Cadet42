@@ -6,7 +6,7 @@
 /*   By: tsongtra <tsongtra@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/25 17:12:18 by tsongtra          #+#    #+#             */
-/*   Updated: 2023/08/25 17:18:35 by tsongtra         ###   ########.fr       */
+/*   Updated: 2023/09/21 13:36:01 by tsongtra         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,6 @@ int	ft_tolower(int c)
 }
 
 // #include<stdio.h>
-
 // int	main()
 // {
 // 	printf("%c",ft_tolower('9'));
