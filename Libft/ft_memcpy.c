@@ -6,7 +6,7 @@
 /*   By: tsongtra <tsongtra@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/26 11:56:41 by tsongtra          #+#    #+#             */
-/*   Updated: 2023/08/26 12:07:57 by tsongtra         ###   ########.fr       */
+/*   Updated: 2023/09/25 11:33:19 by tsongtra         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@ void	*ft_memcpy(void *dst, const void *src, size_t n)
 {
 	size_t	i;
 
-	if (!dst)
+	if (dst == NULL && src == NULL)
 		return (NULL);
 	i = 0;
 	while (i < n)
@@ -36,9 +36,9 @@ void	*ft_memcpy(void *dst, const void *src, size_t n)
 //     char destination[20];
 // 	char destination2[20];
 
-//     memcpy(destination, source, sizeof(source));
-//     printf("Ori : %s\n", destination);
-//     ft_memcpy(destination2, source, sizeof(source));
+//     // memcpy(((void *)0), "segfaulter tu dois", 0x20);
+//     // printf("Ori : %s\n", destination);
+//     ft_memcpy(((void *)0), "segfaulter tu dois", 0x20);
 //     printf("ft : %s\n", destination2);
 
 //     return 0;

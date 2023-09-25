@@ -6,7 +6,7 @@
 #    By: tsongtra <tsongtra@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/09/21 12:38:05 by tsongtra          #+#    #+#              #
-#    Updated: 2023/09/24 15:00:18 by tsongtra         ###   ########.fr        #
+#    Updated: 2023/09/24 15:19:40 by tsongtra         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -21,10 +21,10 @@ SRCS			=	ft_isalnum.c ft_isprint.c ft_memcmp.c  ft_putchar_fd.c \
 					ft_split.c ft_strmapi.c ft_striteri.c
 OBJS			= $(SRCS:.c=.o)
 
-BONUS			=	ft_lstadd_back.c ft_lstadd_front.c ft_lstclear.c \
-					ft_lstdelone.c ft_lstiter.c ft_lstlast.c \
-					ft_lstmap.c ft_lstnew.c ft_lstsize.c
-BONUS_OBJS		= $(BONUS:.c=.o)
+# BONUS			=	ft_lstadd_back.c ft_lstadd_front.c ft_lstclear.c \
+# 					ft_lstdelone.c ft_lstiter.c ft_lstlast.c \
+# 					ft_lstmap.c ft_lstnew.c ft_lstsize.c
+# BONUS_OBJS		= $(BONUS:.c=.o)
 
 CC				= gcc
 RM				= rm -f

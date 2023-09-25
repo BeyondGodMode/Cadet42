@@ -6,7 +6,7 @@
 /*   By: tsongtra <tsongtra@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/26 11:19:38 by tsongtra          #+#    #+#             */
-/*   Updated: 2023/08/27 02:22:40 by tsongtra         ###   ########.fr       */
+/*   Updated: 2023/09/25 11:43:24 by tsongtra         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,18 +14,10 @@
 
 void	*ft_memchr(const void *s, int c, size_t n)
 {
-	const unsigned char	*p;
-	size_t				i;
-
-	p = s;
-	i = 0;
-	if (!s)
-		return (NULL);
-	while (i < n)
+	while (n--)
 	{
-		if (p[i] == (unsigned char)c)
-			return ((void *)(p + i));
-		i++;
+		if (*(unsigned char *)s++ == (unsigned char)c)
+			return ((void *)(unsigned char *)s - 1);
 	}
 	return (NULL);
 }
@@ -40,10 +32,10 @@ void	*ft_memchr(const void *s, int c, size_t n)
 // 	size_t size = sizeof(memory_block);
 
 //     // Using the standard memchr function
-//     void *result_std = memchr(memory_block, target, size);
-// 	void *result_std2 = ft_memchr(memory_block, target, size);
+//     // void *result_std = memchr(((void *)0), '\0', 0x20);
+// 	void *result_std2 = ft_memchr(((void *)0), '\0', 0x20);
 
-// 	printf("Ori = %ld\n",(const char *)result_std - memory_block);
+// 	// printf("Ori = %ld\n",(const char *)result_std - memory_block);
 // 	printf("ft = %ld\n",(const char *)result_std2 - memory_block);
 // 	return (0);
 // }

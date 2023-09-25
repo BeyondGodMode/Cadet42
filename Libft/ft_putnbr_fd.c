@@ -6,7 +6,7 @@
 /*   By: tsongtra <tsongtra@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/26 23:55:38 by tsongtra          #+#    #+#             */
-/*   Updated: 2023/09/22 14:06:01 by tsongtra         ###   ########.fr       */
+/*   Updated: 2023/09/24 15:30:02 by tsongtra         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@ void	ft_putnbr_fd(int n, int fd)
 	long long	nb;
 
 	nb = n;
-	if (nb < 0 && nb <= -10)
+	if (nb < 0)
 	{
 		write(fd, "-", 1);
 	}
@@ -42,7 +42,7 @@ void	ft_putnbr_fd(int n, int fd)
 
 // int	main()
 // {
-// 	ft_putnbr_fd(-2147483648, 1);
+// 	ft_putnbr_fd(-5, 2);
 // 	write(1, "\n", 1);
 // 	ft_putnbr_fd(2147483647, 1);
 // 	return (0);

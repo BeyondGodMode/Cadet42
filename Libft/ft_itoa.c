@@ -6,7 +6,7 @@
 /*   By: tsongtra <tsongtra@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/22 13:16:13 by tsongtra          #+#    #+#             */
-/*   Updated: 2023/09/22 14:02:36 by tsongtra         ###   ########.fr       */
+/*   Updated: 2023/09/25 11:25:48 by tsongtra         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -60,12 +60,12 @@ char	*ft_itoa(int n)
 
 	len = getlen(n);
 	num = n;
-	str = (char *)malloc((len + 1) * sizeof(char));
-	if (str == NULL)
-		return (NULL);
 	neg = ft_isneg(num);
 	if (neg == 1)
 		num = -num;
+	str = (char *)malloc((len + 1 + neg) * sizeof(char));
+	if (str == NULL)
+		return (NULL);
 	i = 0;
 	while (i < len)
 	{
@@ -84,8 +84,11 @@ char	*ft_itoa(int n)
 // int	main()
 // {
 // 	char	*str;
+// 	int		size;
 
-// 	str = ft_itoa(-567);
+// 	str = ft_itoa(-58594);
+//  	// size = get_last_malloc_size();
 // 	printf("String = %s",str);
+// 	// printf("size = %d",size);
 // 	return (0);
 // }
