@@ -6,7 +6,7 @@
 /*   By: tsongtra <tsongtra@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/25 19:01:05 by tsongtra          #+#    #+#             */
-/*   Updated: 2023/09/21 12:43:57 by tsongtra         ###   ########.fr       */
+/*   Updated: 2023/09/26 13:50:07 by tsongtra         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,9 +20,9 @@ char	*ft_strnstr(const char *stack, const char *needle, size_t len)
 	if (*needle == '\0')
 		return ((char *) stack);
 	needle_len = ft_strlen(needle);
-	if (len == 0)
+	if (*stack == '\0' || len <= 0 || needle_len > len)
 		return (NULL);
-	if (needle_len == 0)
+	if (needle_len <= 0)
 		return ((char *)stack);
 	i = 0;
 	while (i <= len - needle_len && stack[i] != '\0')

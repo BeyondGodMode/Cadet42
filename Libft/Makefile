@@ -6,7 +6,7 @@
 #    By: tsongtra <tsongtra@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/09/21 12:38:05 by tsongtra          #+#    #+#              #
-#    Updated: 2023/09/24 15:19:40 by tsongtra         ###   ########.fr        #
+#    Updated: 2023/09/25 14:54:56 by tsongtra         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -45,7 +45,7 @@ fclean:			clean
 
 re:				fclean $(NAME)
 
-bonus:			$(OBJS) $(BONUS_OBJS)
-				ar rcs $(NAME) $(OBJS) $(BONUS_OBJS)
+# bonus:			$(OBJS) $(BONUS_OBJS)
+# 				ar rcs $(NAME) $(OBJS) $(BONUS_OBJS)
 
-.PHONY:			all clean fclean re bonus
+.PHONY:			all clean fclean re
