@@ -6,7 +6,7 @@
 /*   By: tsongtra <tsongtra@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/26 14:25:40 by tsongtra          #+#    #+#             */
-/*   Updated: 2023/08/27 02:23:54 by tsongtra         ###   ########.fr       */
+/*   Updated: 2023/10/15 13:10:46 by tsongtra         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,9 +18,9 @@ char	*ft_strdup(const char *s1)
 	char	*str;
 
 	len = ft_strlen(s1);
-	str = (char *)malloc(len + 1);
+	str = (char *)malloc((len + 1) * sizeof(char));
 	if (str != NULL)
-		ft_strlcpy(str, s1, len + 1);
+		ft_strlcpy(str, s1, (len + 1));
 	return (str);
 }
 

@@ -6,7 +6,7 @@
 /*   By: tsongtra <tsongtra@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/26 23:00:38 by tsongtra          #+#    #+#             */
-/*   Updated: 2023/08/26 23:11:48 by tsongtra         ###   ########.fr       */
+/*   Updated: 2023/10/15 12:22:39 by tsongtra         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 void	ft_putchar_fd(char c, int fd)
 {
-	write(fd, &c, sizeof(c));
+	write(fd, &c, 1);
 }
 
 // int	main()

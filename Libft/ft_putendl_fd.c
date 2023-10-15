@@ -6,7 +6,7 @@
 /*   By: tsongtra <tsongtra@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/26 23:22:28 by tsongtra          #+#    #+#             */
-/*   Updated: 2023/08/27 00:48:52 by tsongtra         ###   ########.fr       */
+/*   Updated: 2023/10/15 12:25:03 by tsongtra         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,11 +14,7 @@
 
 void	ft_putendl_fd(char *s, int fd)
 {
-	while (*s != '\0')
-	{
-		write(fd, s, 1);
-		s++;
-	}
+	write(fd, s, ft_strlen(s));
 	write(fd, "\n", 1);
 }
 

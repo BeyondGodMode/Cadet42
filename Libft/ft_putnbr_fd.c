@@ -6,7 +6,7 @@
 /*   By: tsongtra <tsongtra@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/26 23:55:38 by tsongtra          #+#    #+#             */
-/*   Updated: 2023/09/24 15:30:02 by tsongtra         ###   ########.fr       */
+/*   Updated: 2023/10/15 12:28:36 by tsongtra         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,21 +20,15 @@ void	ft_putnbr_fd(int n, int fd)
 	if (nb < 0)
 	{
 		write(fd, "-", 1);
+		nb *= -1;
 	}
 	if (nb >= 10)
 	{
 		ft_putnbr_fd(nb / 10, fd);
 		nb = nb % 10;
 	}
-	if (nb <= -10)
-	{
-		ft_putnbr_fd(nb / -10, fd);
-		nb = nb % -10;
-	}
 	if (nb < 10)
 	{
-		if (nb < 0)
-			nb = -nb;
 		nb = nb + '0';
 		write(fd, &nb, 1);
 	}

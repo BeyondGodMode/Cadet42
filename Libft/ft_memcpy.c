@@ -6,7 +6,7 @@
 /*   By: tsongtra <tsongtra@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/26 11:56:41 by tsongtra          #+#    #+#             */
-/*   Updated: 2023/09/25 11:33:19 by tsongtra         ###   ########.fr       */
+/*   Updated: 2023/10/15 12:18:49 by tsongtra         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,7 @@ void	*ft_memcpy(void *dst, const void *src, size_t n)
 	i = 0;
 	while (i < n)
 	{
-		*(char *)(dst + i) = *(char *)(src + i);
+		*(unsigned char *)(dst + i) = *(unsigned char *)(src + i);
 		i++;
 	}
 	return (dst);

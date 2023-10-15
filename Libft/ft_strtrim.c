@@ -6,13 +6,13 @@
 /*   By: tsongtra <tsongtra@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/22 16:10:10 by tsongtra          #+#    #+#             */
-/*   Updated: 2023/09/23 13:00:43 by tsongtra         ###   ########.fr       */
+/*   Updated: 2023/10/15 18:21:36 by tsongtra         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int	ft_charcheck(char c, const char *set)
+static int	ft_charcheck(char c, const char *set)
 {
 	size_t	i;
 

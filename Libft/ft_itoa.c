@@ -6,13 +6,13 @@
 /*   By: tsongtra <tsongtra@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/22 13:16:13 by tsongtra          #+#    #+#             */
-/*   Updated: 2023/09/25 11:25:48 by tsongtra         ###   ########.fr       */
+/*   Updated: 2023/10/15 18:20:19 by tsongtra         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int	getlen(int n)
+static int	getlen(int n)
 {
 	size_t	len;
 
@@ -25,7 +25,7 @@ int	getlen(int n)
 	return (len);
 }
 
-int	ft_isneg(int n)
+static int	ft_isneg(int n)
 {
 	if (n < 0)
 		return (1);
@@ -33,7 +33,7 @@ int	ft_isneg(int n)
 		return (0);
 }
 
-void	ft_reverse(char *str)
+static void	ft_reverse(char *str)
 {
 	size_t	len;
 	size_t	i;
@@ -62,7 +62,7 @@ char	*ft_itoa(int n)
 	num = n;
 	neg = ft_isneg(num);
 	if (neg == 1)
-		num = -num;
+		num *= -1;
 	str = (char *)malloc((len + 1 + neg) * sizeof(char));
 	if (str == NULL)
 		return (NULL);

@@ -6,7 +6,7 @@
 #    By: tsongtra <tsongtra@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/09/21 12:38:05 by tsongtra          #+#    #+#              #
-#    Updated: 2023/09/25 14:54:56 by tsongtra         ###   ########.fr        #
+#    Updated: 2023/10/15 18:22:34 by tsongtra         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -26,7 +26,7 @@ OBJS			= $(SRCS:.c=.o)
 # 					ft_lstmap.c ft_lstnew.c ft_lstsize.c
 # BONUS_OBJS		= $(BONUS:.c=.o)
 
-CC				= gcc
+CC				= cc
 RM				= rm -f
 CFLAGS			= -Wall -Wextra -Werror -I.
 
@@ -38,7 +38,7 @@ $(NAME):		$(OBJS)
 				ar rcs $(NAME) $(OBJS)
 
 clean:
-				$(RM) $(OBJS) $(BONUS_OBJS)
+				$(RM) $(OBJS)
 
 fclean:			clean
 				$(RM) $(NAME)
