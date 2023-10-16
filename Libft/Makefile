@@ -6,7 +6,7 @@
 #    By: tsongtra <tsongtra@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/09/21 12:38:05 by tsongtra          #+#    #+#              #
-#    Updated: 2023/10/15 18:22:34 by tsongtra         ###   ########.fr        #
+#    Updated: 2023/10/16 15:08:28 by tsongtra         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -21,10 +21,10 @@ SRCS			=	ft_isalnum.c ft_isprint.c ft_memcmp.c  ft_putchar_fd.c \
 					ft_split.c ft_strmapi.c ft_striteri.c
 OBJS			= $(SRCS:.c=.o)
 
-# BONUS			=	ft_lstadd_back.c ft_lstadd_front.c ft_lstclear.c \
-# 					ft_lstdelone.c ft_lstiter.c ft_lstlast.c \
-# 					ft_lstmap.c ft_lstnew.c ft_lstsize.c
-# BONUS_OBJS		= $(BONUS:.c=.o)
+BONUS			=	ft_lstadd_back.c ft_lstadd_front.c ft_lstclear.c \
+					ft_lstdelone.c ft_lstiter.c ft_lstlast.c \
+					ft_lstmap.c ft_lstnew.c ft_lstsize.c
+BONUS_OBJS		= $(BONUS:.c=.o)
 
 CC				= cc
 RM				= rm -f
@@ -45,7 +45,7 @@ fclean:			clean
 
 re:				fclean $(NAME)
 
-# bonus:			$(OBJS) $(BONUS_OBJS)
-# 				ar rcs $(NAME) $(OBJS) $(BONUS_OBJS)
+bonus:			$(OBJS) $(BONUS_OBJS)
+				ar rcs $(NAME) $(OBJS) $(BONUS_OBJS)
 
 .PHONY:			all clean fclean re
