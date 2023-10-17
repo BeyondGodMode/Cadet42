@@ -6,7 +6,7 @@
 /*   By: tsongtra <tsongtra@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/16 14:40:04 by tsongtra          #+#    #+#             */
-/*   Updated: 2023/10/16 17:20:12 by tsongtra         ###   ########.fr       */
+/*   Updated: 2023/10/17 09:43:51 by tsongtra         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,24 +17,19 @@ t_list	*ft_lstmap(t_list *lst, void *(*f)(void *), void (*del)(void *))
 	t_list	*first;
 	t_list	*new;
 
-	if (!f || !del)
+	if (f == NULL || del == NULL || lst == NULL)
 		return (NULL);
 	first = NULL;
-	while (lst)
+	while (lst != NULL)
 	{
-		new = ft_lstnew((*f)(lst->content));
-		if (! new)
+		new = (t_list *)malloc(sizeof(t_list));
+		if (new == NULL)
 		{
-			while (first)
-			{
-				new = first ->next;
-				(*del)(first->content);
-				free(first);
-				first = new;
-			}
-			lst = NULL;
+			ft_lstclear(&first, del);
 			return (NULL);
 		}
+		new->content = f(lst->content);
+		new->next = NULL;
 		ft_lstadd_back(&first, new);
 		lst = lst->next;
 	}
@@ -63,5 +58,8 @@ t_list	*ft_lstmap(t_list *lst, void *(*f)(void *), void (*del)(void *))
 // 	ft_lstadd_back(&lst,ft_lstnew("World"));
 // 	t_list *new_lst = ft_lstmap(lst, tranform_content, free_content);
 // 	printf("contents : %s",new_lst->content);
-// 	// cc ft_lstmap.c ft_lstnew.c ft_lstadd_back.c ft_toupper.c ft_strdup.c ft_lstlast.c ft_strlcpy.c ft_strlen.c;./a.out
 // }
+
+// cc ft_lstmap.c ft_lstnew.c ft_lstclear.c
+// ft_lstadd_back.c ft_toupper.c 
+// ft_strdup.c ft_lstlast.c ft_strlcpy.c ft_strlen.c;./a.out
