@@ -1,29 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_printf.h                                        :+:      :+:    :+:   */
+/*   print_pointer.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: tsongtra <tsongtra@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/12/23 13:12:07 by tsongtra          #+#    #+#             */
-/*   Updated: 2023/12/24 22:42:56 by tsongtra         ###   ########.fr       */
+/*   Created: 2023/12/24 11:28:19 by tsongtra          #+#    #+#             */
+/*   Updated: 2023/12/24 22:24:26 by tsongtra         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef FT_PRINTF_H
-# define FT_PRINTF_H
+#include "ft_printf.h"
 
-# include <stdarg.h>
-# include <unistd.h>
-# include <stdlib.h>
-# include <stdio.h>
+size_t	print_pointer(unsigned long n)
+{
+	size_t	length;
 
-size_t	print_char(char c);
-size_t	print_string(char *str);
-size_t	print_int(int n);
-size_t	print_percent(void);
-size_t	print_hex(unsigned long n, unsigned int c);
-size_t	print_pointer(unsigned long n);
-size_t	print_uint(unsigned int n);
-
-#endif
+	length = 0;
+	if (n == 0)
+		return (write(1, "0", 1));
+	else
+	{
+		length += 2;
+		write(1, "0x", 2);
+		length += print_hex(n, 'x');
+	}
+	return (length);
+}
