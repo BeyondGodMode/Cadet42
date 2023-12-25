@@ -6,7 +6,7 @@
 /*   By: tsongtra <tsongtra@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/27 16:12:32 by tsongtra          #+#    #+#             */
-/*   Updated: 2023/12/25 11:49:38 by tsongtra         ###   ########.fr       */
+/*   Updated: 2023/12/25 11:51:32 by tsongtra         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -73,4 +73,3 @@ int	ft_printf(const char *str, ...)
 // 	// printf("Test %zu\n",write(1, "0", 1));
 // 	// write(1, 1 + "A", 1);
 // }
-no
