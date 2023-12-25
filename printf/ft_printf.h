@@ -6,7 +6,7 @@
 /*   By: tsongtra <tsongtra@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/23 13:12:07 by tsongtra          #+#    #+#             */
-/*   Updated: 2023/12/24 22:42:56 by tsongtra         ###   ########.fr       */
+/*   Updated: 2023/12/25 11:27:07 by tsongtra         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,5 +25,6 @@ size_t	print_percent(void);
 size_t	print_hex(unsigned long n, unsigned int c);
 size_t	print_pointer(unsigned long n);
 size_t	print_uint(unsigned int n);
+int		ft_printf(const char *str, ...);
 
-#endif
+#endif 
