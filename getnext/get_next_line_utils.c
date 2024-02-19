@@ -6,7 +6,7 @@
 /*   By: tsongtra <tsongtra@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/16 10:40:37 by tsongtra          #+#    #+#             */
-/*   Updated: 2024/02/17 15:47:04 by tsongtra         ###   ########.fr       */
+/*   Updated: 2024/02/19 11:25:38 by tsongtra         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,7 +32,6 @@ char	*ft_strchr(char *s, int c)
 	}
 	return (NULL);
 }
-
 
 size_t	ft_strlen(const char *str)
 {
@@ -85,4 +84,3 @@ char	*ft_strjoin(char *start, char *buff)
 	free(start);
 	return (ptr);
 }
-
