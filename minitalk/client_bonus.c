@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   client.c                                           :+:      :+:    :+:   */
+/*   client_bonus.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: beyondq <beyondq@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/03/30 15:24:49 by beyondq           #+#    #+#             */
-/*   Updated: 2024/03/31 11:03:13 by beyondq          ###   ########.fr       */
+/*   Created: 2024/03/31 10:44:17 by beyondq           #+#    #+#             */
+/*   Updated: 2024/03/31 11:15:52 by beyondq          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,6 +31,13 @@ void	send_signal(int pid, unsigned char character)
 		usleep(42);
 	}
 }
+void	handle_read_receipt(int signal)
+{
+	if (signal == SIGUSR1)
+		ft_putstr_fd("Recieved bit 1\n", 1);
+	else if (signal == SIGUSR2)
+		ft_putstr_fd("Recieved bit 0\n", 1);
+}
 
 int	main(int arc, char **arv)
 {
@@ -38,6 +45,8 @@ int	main(int arc, char **arv)
 	const char *msg;
 	int i;
 
+	signal(SIGUSR1, handle_read_receipt);
+	signal(SIGUSR2, handle_read_receipt);
 	if (arc != 3)
 	{
 		ft_putstr_fd("Error input : <pid> <message> need\n", 1);
