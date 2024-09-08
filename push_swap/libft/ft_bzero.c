@@ -1,43 +1,43 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_memset.c                                        :+:      :+:    :+:   */
+/*   ft_bzero.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: tsongtra <tsongtra@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/08/25 10:05:00 by tsongtra          #+#    #+#             */
-/*   Updated: 2024/02/17 15:28:51 by tsongtra         ###   ########.fr       */
+/*   Created: 2023/08/26 14:04:57 by tsongtra          #+#    #+#             */
+/*   Updated: 2023/09/21 12:54:57 by tsongtra         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	*ft_memset(void *ptr, int c, size_t len)
+void	ft_bzero(void *s, size_t n)
 {
 	unsigned char	*p;
-	unsigned char	val;
 	size_t			i;
 
-	p = ptr;
-	val = (unsigned char)c;
+	p = s;
 	i = 0;
-	while (i < len)
+	while (i < n)
 	{
-		p[i] = val;
+		p[i] = 0;
 		i++;
 	}
-	return (ptr);
 }
 
 // #include <stdio.h>
+// #include <string.h>
 
 // int	main()
 // {
-// 	char str[] = "Hello, World!";
-// 	printf("Before memset: %s\n", str);
-
-// 	// Using ft_memset to set the first 5 characters to 'X'
-// 	ft_memset(str, 'X', 5);
-// 	printf("After memset: %s\n", str);
-// 	return (0);
+// 	char buffer[10] = "Hello";
+// 	char buffer2[10] = "Hello";
+//     // Using the standard bzero (memset with zero) function
+//     bzero(buffer, sizeof(buffer));
+//     printf("Using bzero (Standard): %s\n", buffer);
+//     // Implementing your own bzero function
+//     ft_bzero(buffer2, sizeof(buffer2));
+//     printf("Using ft_bzero (Custom): %s\n", buffer2);
+//     return 0;
 // }

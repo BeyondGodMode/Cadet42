@@ -1,43 +1,33 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_memset.c                                        :+:      :+:    :+:   */
+/*   ft_lstclear.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: tsongtra <tsongtra@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/08/25 10:05:00 by tsongtra          #+#    #+#             */
-/*   Updated: 2024/02/17 15:28:51 by tsongtra         ###   ########.fr       */
+/*   Created: 2023/10/16 14:28:14 by tsongtra          #+#    #+#             */
+/*   Updated: 2023/10/16 16:44:00 by tsongtra         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	*ft_memset(void *ptr, int c, size_t len)
+void	ft_lstclear(t_list **lst, void (*del)(void *))
 {
-	unsigned char	*p;
-	unsigned char	val;
-	size_t			i;
-
-	p = ptr;
-	val = (unsigned char)c;
-	i = 0;
-	while (i < len)
-	{
-		p[i] = val;
-		i++;
-	}
-	return (ptr);
+	if (lst == NULL || del == NULL || *lst == NULL)
+		return ;
+	ft_lstclear(&(*lst)->next, del);
+	(del)((*lst)->content);
+	free(*lst);
+	*lst = NULL;
 }
-
-// #include <stdio.h>
 
 // int	main()
 // {
-// 	char str[] = "Hello, World!";
-// 	printf("Before memset: %s\n", str);
+// 	t_list *lst = ft_lstnew("Hello");
+// 	ft_lstadd_back(&lst, ft_lstnew("World"));
 
-// 	// Using ft_memset to set the first 5 characters to 'X'
-// 	ft_memset(str, 'X', 5);
-// 	printf("After memset: %s\n", str);
-// 	return (0);
+// 	// printf("%s",lst->content);
+// 	ft_lstclear(&lst,free);
+// 	printf("%s\n",lst->content);
 // }

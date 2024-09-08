@@ -1,43 +1,36 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_memset.c                                        :+:      :+:    :+:   */
+/*   ft_lstsize.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: tsongtra <tsongtra@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/08/25 10:05:00 by tsongtra          #+#    #+#             */
-/*   Updated: 2024/02/17 15:28:51 by tsongtra         ###   ########.fr       */
+/*   Created: 2023/10/16 10:26:14 by tsongtra          #+#    #+#             */
+/*   Updated: 2023/10/16 17:24:00 by tsongtra         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	*ft_memset(void *ptr, int c, size_t len)
+int	ft_lstsize(t_list *lst)
 {
-	unsigned char	*p;
-	unsigned char	val;
-	size_t			i;
+	size_t	count;
 
-	p = ptr;
-	val = (unsigned char)c;
-	i = 0;
-	while (i < len)
+	count = 0;
+	while (lst)
 	{
-		p[i] = val;
-		i++;
+		lst = lst->next;
+		count++;
 	}
-	return (ptr);
+	return (count);
 }
-
-// #include <stdio.h>
-
 // int	main()
 // {
-// 	char str[] = "Hello, World!";
-// 	printf("Before memset: %s\n", str);
+// 	t_list *lst = ft_lstnew("Hello");
+// 	ft_lstadd_back(&lst, ft_lstnew("World"));
+// 	ft_lstadd_back(&lst, ft_lstnew("Easy"));
 
-// 	// Using ft_memset to set the first 5 characters to 'X'
-// 	ft_memset(str, 'X', 5);
-// 	printf("After memset: %s\n", str);
-// 	return (0);
+// 	int size = ft_lstsize(lst);
+// 	printf ("size : %d",size);
+// 	// cc ft_lstsize.c ft_lstnew.c ft_lstadd_back.c ft_lstlast.c;./a.out 
 // }

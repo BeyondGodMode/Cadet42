@@ -3,31 +3,30 @@
 /*                                                        :::      ::::::::   */
 /*   server_bonus.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: beyondq <beyondq@student.42.fr>            +#+  +:+       +#+        */
+/*   By: tsongtra <tsongtra@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/31 10:19:40 by beyondq           #+#    #+#             */
-/*   Updated: 2024/03/31 11:16:06 by beyondq          ###   ########.fr       */
+/*   Updated: 2024/03/31 14:08:45 by tsongtra         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft/libft.h"
 #include <signal.h>
 #include <unistd.h>
-#include <stdio.h>
 
-#define END_TRANMISSION '\0'
+#define END_TRANSMISSION '\0'
 
 void	handle_signal(int sig, siginfo_t *info, void *context)
 {
 	static unsigned char	current_char;
-	static int bit_index;
+	static int				bit_index;
 
-	(void) context;
+	(void)context;
 	current_char |= (sig == SIGUSR1);
 	bit_index++;
 	if (bit_index == 8)
 	{
-		if (current_char == END_TRANMISSION)
+		if (current_char == END_TRANSMISSION)
 			ft_putstr_fd("\n", 1);
 		else
 			ft_putchar_fd(current_char, 1);
@@ -44,7 +43,7 @@ void	handle_signal(int sig, siginfo_t *info, void *context)
 
 int	main(void)
 {
-	struct sigaction sa;
+	struct sigaction	sa;
 
 	sa.sa_sigaction = &handle_signal;
 	sa.sa_flags = SA_SIGINFO;

@@ -1,43 +1,42 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_memset.c                                        :+:      :+:    :+:   */
+/*   ft_striteri.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: tsongtra <tsongtra@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/08/25 10:05:00 by tsongtra          #+#    #+#             */
-/*   Updated: 2024/02/17 15:28:51 by tsongtra         ###   ########.fr       */
+/*   Created: 2023/09/24 13:49:38 by tsongtra          #+#    #+#             */
+/*   Updated: 2023/09/24 15:06:30 by tsongtra         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	*ft_memset(void *ptr, int c, size_t len)
+void	ft_striteri(char *s, void (*f)(unsigned int, char*))
 {
-	unsigned char	*p;
-	unsigned char	val;
-	size_t			i;
+	size_t	i;
 
-	p = ptr;
-	val = (unsigned char)c;
-	i = 0;
-	while (i < len)
+	if (s != NULL && f != NULL)
 	{
-		p[i] = val;
-		i++;
+		i = 0;
+		while (*s)
+			(*f)(i++, s++);
 	}
-	return (ptr);
 }
 
 // #include <stdio.h>
 
-// int	main()
+// void	iterator_function(unsigned int index, char *c)
 // {
-// 	char str[] = "Hello, World!";
-// 	printf("Before memset: %s\n", str);
+// 	(*c)++;
+// }
 
-// 	// Using ft_memset to set the first 5 characters to 'X'
-// 	ft_memset(str, 'X', 5);
-// 	printf("After memset: %s\n", str);
+// int main()
+// {
+// 	char input[] = "hello";
+// 	printf("Input: %s\n", input);
+// 	// Applying the iterator function to modify the input string
+// 	ft_striteri(input, iterator_function);
+// 	printf("Modified String: %s\n", input);
 // 	return (0);
 // }

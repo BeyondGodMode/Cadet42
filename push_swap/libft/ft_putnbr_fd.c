@@ -1,43 +1,43 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_memset.c                                        :+:      :+:    :+:   */
+/*   ft_putnbr_fd.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: tsongtra <tsongtra@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/08/25 10:05:00 by tsongtra          #+#    #+#             */
-/*   Updated: 2024/02/17 15:28:51 by tsongtra         ###   ########.fr       */
+/*   Created: 2023/08/26 23:55:38 by tsongtra          #+#    #+#             */
+/*   Updated: 2023/10/15 12:28:36 by tsongtra         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	*ft_memset(void *ptr, int c, size_t len)
+void	ft_putnbr_fd(int n, int fd)
 {
-	unsigned char	*p;
-	unsigned char	val;
-	size_t			i;
+	long long	nb;
 
-	p = ptr;
-	val = (unsigned char)c;
-	i = 0;
-	while (i < len)
+	nb = n;
+	if (nb < 0)
 	{
-		p[i] = val;
-		i++;
+		write(fd, "-", 1);
+		nb *= -1;
 	}
-	return (ptr);
+	if (nb >= 10)
+	{
+		ft_putnbr_fd(nb / 10, fd);
+		nb = nb % 10;
+	}
+	if (nb < 10)
+	{
+		nb = nb + '0';
+		write(fd, &nb, 1);
+	}
 }
-
-// #include <stdio.h>
 
 // int	main()
 // {
-// 	char str[] = "Hello, World!";
-// 	printf("Before memset: %s\n", str);
-
-// 	// Using ft_memset to set the first 5 characters to 'X'
-// 	ft_memset(str, 'X', 5);
-// 	printf("After memset: %s\n", str);
+// 	ft_putnbr_fd(-5, 2);
+// 	write(1, "\n", 1);
+// 	ft_putnbr_fd(2147483647, 1);
 // 	return (0);
 // }

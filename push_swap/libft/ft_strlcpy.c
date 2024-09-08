@@ -1,43 +1,42 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_memset.c                                        :+:      :+:    :+:   */
+/*   ft_strlcpy.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: tsongtra <tsongtra@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/08/25 10:05:00 by tsongtra          #+#    #+#             */
-/*   Updated: 2024/02/17 15:28:51 by tsongtra         ###   ########.fr       */
+/*   Created: 2023/08/25 10:15:50 by tsongtra          #+#    #+#             */
+/*   Updated: 2023/08/26 01:06:46 by tsongtra         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	*ft_memset(void *ptr, int c, size_t len)
+size_t	ft_strlcpy(char *dst, const char *src, size_t size)
 {
-	unsigned char	*p;
-	unsigned char	val;
-	size_t			i;
+	size_t	i;
 
-	p = ptr;
-	val = (unsigned char)c;
 	i = 0;
-	while (i < len)
+	if (size > 0)
 	{
-		p[i] = val;
-		i++;
+		while (src[i] && i < (size - 1))
+		{
+			dst[i] = src[i];
+			i++;
+		}
+		dst[i] = '\0';
 	}
-	return (ptr);
+	while (src[i] != '\0')
+		i++;
+	return (i);
 }
 
 // #include <stdio.h>
 
 // int	main()
 // {
-// 	char str[] = "Hello, World!";
-// 	printf("Before memset: %s\n", str);
-
-// 	// Using ft_memset to set the first 5 characters to 'X'
-// 	ft_memset(str, 'X', 5);
-// 	printf("After memset: %s\n", str);
-// 	return (0);
+// 	char t[] = "test3";
+// 	char a[] = "54";
+// 	ft_strlcpy(a,t,4);
+// 	printf("%s",a);
 // }

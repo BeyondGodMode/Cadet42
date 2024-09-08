@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   client_bonus.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: beyondq <beyondq@student.42.fr>            +#+  +:+       +#+        */
+/*   By: tsongtra <tsongtra@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/31 10:44:17 by beyondq           #+#    #+#             */
-/*   Updated: 2024/03/31 11:15:52 by beyondq          ###   ########.fr       */
+/*   Updated: 2024/03/31 14:06:23 by tsongtra         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,6 +31,7 @@ void	send_signal(int pid, unsigned char character)
 		usleep(42);
 	}
 }
+
 void	handle_read_receipt(int signal)
 {
 	if (signal == SIGUSR1)
@@ -41,9 +42,9 @@ void	handle_read_receipt(int signal)
 
 int	main(int arc, char **arv)
 {
-	pid_t serverpid;
-	const char *msg;
-	int i;
+	pid_t		serverpid;
+	const char	*msg;
+	int			i;
 
 	signal(SIGUSR1, handle_read_receipt);
 	signal(SIGUSR2, handle_read_receipt);

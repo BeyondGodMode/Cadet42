@@ -1,43 +1,25 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_memset.c                                        :+:      :+:    :+:   */
+/*   ft_putstr_fd.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: tsongtra <tsongtra@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/08/25 10:05:00 by tsongtra          #+#    #+#             */
-/*   Updated: 2024/02/17 15:28:51 by tsongtra         ###   ########.fr       */
+/*   Created: 2023/08/26 23:06:21 by tsongtra          #+#    #+#             */
+/*   Updated: 2023/10/15 12:29:34 by tsongtra         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	*ft_memset(void *ptr, int c, size_t len)
+void	ft_putstr_fd(char *s, int fd)
 {
-	unsigned char	*p;
-	unsigned char	val;
-	size_t			i;
-
-	p = ptr;
-	val = (unsigned char)c;
-	i = 0;
-	while (i < len)
-	{
-		p[i] = val;
-		i++;
-	}
-	return (ptr);
+	write(fd, s, ft_strlen(s));
 }
-
-// #include <stdio.h>
 
 // int	main()
 // {
-// 	char str[] = "Hello, World!";
-// 	printf("Before memset: %s\n", str);
-
-// 	// Using ft_memset to set the first 5 characters to 'X'
-// 	ft_memset(str, 'X', 5);
-// 	printf("After memset: %s\n", str);
+// 	char	t[] = "test easy";
+// 	ft_putstr_fd(t,1);
 // 	return (0);
 // }

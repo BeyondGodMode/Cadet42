@@ -6,7 +6,7 @@
 /*   By: tsongtra <tsongtra@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/16 10:40:37 by tsongtra          #+#    #+#             */
-/*   Updated: 2024/02/20 18:47:42 by tsongtra         ###   ########.fr       */
+/*   Updated: 2024/02/20 20:55:25 by tsongtra         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -79,19 +79,16 @@ char	*ft_strjoin(char *start, char *buff)
 	{
 		free(start);
 		start = NULL;
-		// printf("start============ %p\n",start);
 		return (NULL);
 	}
 	ptr = (char *)malloc(1 + ft_strlen(start) + ft_strlen(buff) * sizeof(char));
 	if (!ptr)
 	{
 		free(ptr);
-		printf("ptr %p\n",ptr);
 		return (NULL);
 	}
 	ptr = ft_join(ptr, start, buff);
 	free(start);
 	start = NULL;
-	// printf("start ========== %p\n",start);
 	return (ptr);
 }

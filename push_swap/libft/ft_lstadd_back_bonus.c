@@ -1,43 +1,38 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_memset.c                                        :+:      :+:    :+:   */
+/*   ft_lstadd_back.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: tsongtra <tsongtra@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/08/25 10:05:00 by tsongtra          #+#    #+#             */
-/*   Updated: 2024/02/17 15:28:51 by tsongtra         ###   ########.fr       */
+/*   Created: 2023/10/16 10:35:56 by tsongtra          #+#    #+#             */
+/*   Updated: 2023/10/16 16:03:34 by tsongtra         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	*ft_memset(void *ptr, int c, size_t len)
+void	ft_lstadd_back(t_list **lst, t_list *new)
 {
-	unsigned char	*p;
-	unsigned char	val;
-	size_t			i;
+	t_list	*last;
 
-	p = ptr;
-	val = (unsigned char)c;
-	i = 0;
-	while (i < len)
+	if (lst)
 	{
-		p[i] = val;
-		i++;
+		if (*lst)
+		{
+			last = ft_lstlast(*lst);
+			last->next = new;
+		}
+		else
+			*lst = new;
 	}
-	return (ptr);
 }
-
-// #include <stdio.h>
-
 // int	main()
 // {
-// 	char str[] = "Hello, World!";
-// 	printf("Before memset: %s\n", str);
-
-// 	// Using ft_memset to set the first 5 characters to 'X'
-// 	ft_memset(str, 'X', 5);
-// 	printf("After memset: %s\n", str);
-// 	return (0);
+// 	t_list *lst = ft_lstnew("Hello");
+// 	t_list *new = ft_lstnew("World");
+// 	ft_lstadd_back(&lst, new);
+// 	printf("%s",lst->content);
+// 	lst = lst->next;
+// 	printf("%s",lst->content);
 // }

@@ -6,16 +6,21 @@
 /*   By: tsongtra <tsongtra@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/16 09:58:08 by tsongtra          #+#    #+#             */
-/*   Updated: 2024/02/20 19:17:25 by tsongtra         ###   ########.fr       */
+/*   Updated: 2024/02/20 21:05:15 by tsongtra         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "get_next_line.h"
 
-
-char	*ft_line(char *str)
+char	*free_all(char *str, char *tmp)
 {
-	int		i;
+	free(tmp);
+	free(str);
+	return (NULL);
+}
+
+char	*ft_line(char *str, int i)
+{
 	char	*line;
 
 	if (!str || !str[0])
@@ -29,7 +34,6 @@ char	*ft_line(char *str)
 	if (!line)
 	{
 		free(line);
-		printf("line %p\n",line);
 		return (NULL);
 	}
 	i = 0;
@@ -54,17 +58,13 @@ char	*get_next(char *str, int i, int j)
 	{
 		free(str);
 		str = NULL;
-		printf("str ================= %p\n",str);
 		return (NULL);
 	}
 	if (str[i] == '\n')
 		i++;
 	buff = (char *)malloc(1 + ft_strlen(str) - i);
 	if (!buff)
-	{
-		free(buff);
 		return (NULL);
-	}
 	while (str[i + j])
 	{
 		buff[j] = str[i + j];
@@ -86,55 +86,41 @@ char	*get_next_line(int fd)
 	fd_read = 1;
 	tmp = (char *) malloc((1 + BUFFER_SIZE) * sizeof(char));
 	if (!tmp)
-	{
-		free(tmp);
-		tmp = NULL;
-		printf("abc");
 		return (NULL);
-	}
-	// printf("test string = %s\n",str);
 	while (!(ft_strchr(str, '\n')) && fd_read > 0)
 	{
 		fd_read = read(fd, tmp, BUFFER_SIZE);
 		if (fd_read == -1)
 		{
-			// printf("str tester %s\n",str);
-			free(tmp);
-			free(str);
-			str = NULL;
+			str = free_all(str, tmp);
 			return (NULL);
 		}
 		tmp[fd_read] = '\0';
-		// printf("fd_read %i\n",fd_read);
-		// printf("tmp %s\n",tmp);
-		// printf("str %s\n",str);
 		str = ft_strjoin(str, tmp);
-		// printf("tmp %s\n",tmp);
 	}
 	free(tmp);
-	tmp = ft_line(str);
-	// printf("tmp2 = %s\n",tmp);
+	tmp = ft_line(str, 0);
 	str = get_next(str, 0, 0);
-	printf("str2 = %p \n",str);
-	printf("tmp2 = %p \n",tmp);
 	return (tmp);
 }
 
-// int	main(void)
-// {
-// 	int	fd;
-// 	char * line;
+int	main(void)
+{
+	int	fd;
+	char * line;
 
-// 	fd = open("empty.txt", O_RDONLY);
-// 	line = get_next_line(fd);
-// 	printf("%s\n", line);
-// 	free(line);
-// 	line = get_next_line(fd);
-// 	printf("%s\n", line);
-// 	free(line);
-// 	close(fd);
-	
-// 	// get_next_line(fd);
-// 	// get_next_line(fd);
-// 	// get_next_line(fd);
-// }
+	fd = open("text.txt", O_RDONLY);
+	line = get_next_line(fd);
+	printf("%s", line);
+	free(line);
+	line = get_next_line(fd);
+	printf("%s", line);
+	free(line);
+	line = get_next_line(fd);
+	printf("%s", line);
+	free(line);
+	close(fd);
+	// get_next_line(fd);
+	// get_next_line(fd);
+	// get_next_line(fd);
+}
