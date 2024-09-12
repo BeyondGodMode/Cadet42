@@ -1,61 +1,62 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   swap.c                                             :+:      :+:    :+:   */
+/*   reverserotate.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: tsongtra <tsongtra@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/09/12 10:29:24 by tsongtra          #+#    #+#             */
-/*   Updated: 2024/09/12 11:08:24 by tsongtra         ###   ########.fr       */
+/*   Created: 2024/09/09 15:50:52 by tsongtra          #+#    #+#             */
+/*   Updated: 2024/09/12 10:37:09 by tsongtra         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-int	swap(t_list **stack)
+int	reverserotate(t_list **stack)
 {
 	t_list	*head;
-	t_list	*next;
-	int		tmp_val;
-	int		tmp_index;
+	t_list	*tail;
 
 	if (ft_lstsize(*stack) < 2)
 		return (-1);
 	head = *stack;
-	next = head->next;
-	if (!head && !next)
-		ft_error("Error");
-	tmp_val = head->value;
-	tmp_index = head->index;
-	head->value = next->value;
-	head->index = next->index;
-	next->value = tmp_val;
-	next->index = tmp_index;
+	tail = ft_lstlast(head);
+	while (head)
+	{
+		if (head->next->next == NULL)
+		{
+			head->next = NULL;
+			break ;
+		}
+		head = head->next;
+	}
+	tail->next = *stack;
+	*stack = tail;
 	return (0);
 }
 
-int	sa(t_list **stack_a)
+int	rra(t_list **stack_a)
 {
-	if (swap (stack_a) == -1)
+	if (reverserotate(stack_a) == -1)
 		return (-1);
-	ft_putendl_fd("sa", 1);
+	ft_putendl_fd("rra", 1);
 	return (0);
 }
 
-int	sb(t_list **stack_b)
+int	rrb(t_list **stack_b)
 {
-	if (swap(stack_b) == -1)
+	if (reverserotate(stack_b) == -1)
 		return (-1);
-	ft_putendl_fd("sb", 1);
+	ft_putendl_fd("rrb", 1);
 	return (0);
 }
 
-int	ss(t_list **stack_a, t_list **stack_b)
+int	rrr(t_list **stack_a, t_list **stack_b)
 {
-	if ((ft_lstsize(*stack_a) < 2) || (ft_lstsize(*stack_b) < 2))
+	if ((ft_lstsize(*stack_a)) < 2 || (ft_lstsize(*stack_b) < 2))
 		return (-1);
-	swap(stack_a);
-	swap(stack_b);
-	ft_putendl_fd("ss", 1);
+	reverserotate(stack_a);
+	reverserotate(stack_b);
+	ft_putendl_fd("rrr", 1);
 	return (0);
 }

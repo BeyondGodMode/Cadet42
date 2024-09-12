@@ -6,7 +6,7 @@
 /*   By: tsongtra <tsongtra@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/21 12:45:26 by tsongtra          #+#    #+#             */
-/*   Updated: 2023/10/16 15:32:14 by tsongtra         ###   ########.fr       */
+/*   Updated: 2024/09/10 23:39:02 by tsongtra         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,11 +20,12 @@
 
 typedef struct s_list
 {
-	void			*content;
+	int				value;
+	int				index;
 	struct s_list	*next;
 }				t_list;
 
-int				ft_atoi(const char *str);
+long			ft_atoi(const char *str);
 
 void			ft_bzero(void *s, size_t n);
 
@@ -94,16 +95,6 @@ char			*ft_substr(char const *s, unsigned int start, size_t len);
 int				ft_tolower(int c);
 
 int				ft_toupper(int c);
-
-t_list			*ft_lstnew(void *content);
-
-int				ft_lstsize(t_list *lst);
-
-t_list			*ft_lstlast(t_list *lst);
-
-void			ft_lstadd_front(t_list **alst, t_list *new);
-
-void			ft_lstadd_back(t_list **alst, t_list *new);
 
 void			ft_lstdelone(t_list *lst, void (*del)(void*));
 

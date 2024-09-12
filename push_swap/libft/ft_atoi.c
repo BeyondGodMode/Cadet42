@@ -6,17 +6,17 @@
 /*   By: tsongtra <tsongtra@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/25 17:21:23 by tsongtra          #+#    #+#             */
-/*   Updated: 2024/09/06 10:37:15 by tsongtra         ###   ########.fr       */
+/*   Updated: 2024/09/10 23:42:33 by tsongtra         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int	ft_atoi(const char *str)
+long	ft_atoi(const char *str)
 {
-	int	i;
-	int	sign;
-	int	count;
+	long	i;
+	int		sign;
+	long	count;
 
 	if (*str == '\0')
 		return (0);

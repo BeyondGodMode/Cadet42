@@ -6,11 +6,44 @@
 /*   By: tsongtra <tsongtra@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/08 18:10:04 by tsongtra          #+#    #+#             */
-/*   Updated: 2024/09/09 10:59:59 by tsongtra         ###   ########.fr       */
+/*   Updated: 2024/09/12 18:27:41 by tsongtra         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
+
+int	get_distance(t_list **stack, int index)
+{
+	t_list	*head;
+	int		distance;
+
+	distance = 0;
+	head = *stack;
+	while (head)
+	{
+		if (head->index == index)
+			break ;
+		distance++;
+		head = head->next;
+	}
+	return (distance);
+}
+
+int	get_max(t_list **stack, int val)
+{
+	t_list	*head;
+	int		max;
+
+	head = *stack;
+	max = head->index;
+	while (head->next)
+	{
+		head = head->next;
+		if ((head->index > max) && head->index != val)
+			max = head->index;
+	}
+	return (max);
+}
 
 static t_list	*get_min(t_list **stack)
 {
