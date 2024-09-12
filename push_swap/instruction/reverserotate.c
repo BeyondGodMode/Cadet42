@@ -6,11 +6,11 @@
 /*   By: tsongtra <tsongtra@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/09 15:50:52 by tsongtra          #+#    #+#             */
-/*   Updated: 2024/09/12 10:37:09 by tsongtra         ###   ########.fr       */
+/*   Updated: 2024/09/12 21:22:56 by tsongtra         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "push_swap.h"
+#include "../includes/push_swap.h"
 
 int	reverserotate(t_list **stack)
 {

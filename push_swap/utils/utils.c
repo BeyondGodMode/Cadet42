@@ -6,11 +6,11 @@
 /*   By: tsongtra <tsongtra@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/08 11:47:19 by tsongtra          #+#    #+#             */
-/*   Updated: 2024/09/12 10:58:05 by tsongtra         ###   ########.fr       */
+/*   Updated: 2024/09/12 21:23:55 by tsongtra         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "push_swap.h"
+#include "../includes/push_swap.h"
 
 void	ft_error(char *msg)
 {

@@ -6,30 +6,19 @@
 /*   By: tsongtra <tsongtra@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/06 10:46:11 by tsongtra          #+#    #+#             */
-/*   Updated: 2024/09/12 11:10:00 by tsongtra         ###   ########.fr       */
+/*   Updated: 2024/09/12 21:24:28 by tsongtra         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "push_swap.h"
-
-static int	check_contains(int num, char **arv, int i)
-{
-	i++;
-	while (arv[i])
-	{
-		if (ft_atoi(arv[i]) == num)
-			return (1);
-		i++;
-	}
-	return (0);
-}
+#include "../includes/push_swap.h"
 
 static int	ft_isnum(char *num)
 {
 	int		i;
 
 	i = 0;
-	if (num[0] == '-' || num[0] == '+')
+	if ((num[0] == '-' && ft_isdigit(num[1])) \
+	|| (num[0] == '+' && ft_isdigit(num[1])))
 		i++;
 	while (num[i])
 	{

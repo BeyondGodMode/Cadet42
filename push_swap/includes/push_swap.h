@@ -6,14 +6,14 @@
 /*   By: tsongtra <tsongtra@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/06 10:45:44 by tsongtra          #+#    #+#             */
-/*   Updated: 2024/09/12 18:27:52 by tsongtra         ###   ########.fr       */
+/*   Updated: 2024/09/12 21:25:38 by tsongtra         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef PUSH_SWAP_H
 # define PUSH_SWAP_H
 
-# include "libft/libft.h"
+# include "../libft/libft.h"
 # include <stdlib.h>
 # include <unistd.h>
 # include <stdint.h>

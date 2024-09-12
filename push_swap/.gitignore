@@ -1,2 +1,8 @@
 a.out
 checker_linux
+push_swap
+push_swap_tester.pl
+.push_swap_test_results.log
+push_swap_test_linux.sh
+0
+traces.txt

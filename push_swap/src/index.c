@@ -6,11 +6,11 @@
 /*   By: tsongtra <tsongtra@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/08 18:10:04 by tsongtra          #+#    #+#             */
-/*   Updated: 2024/09/12 18:27:41 by tsongtra         ###   ########.fr       */
+/*   Updated: 2024/09/12 21:22:02 by tsongtra         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "push_swap.h"
+#include "../includes/push_swap.h"
 
 int	get_distance(t_list **stack, int index)
 {

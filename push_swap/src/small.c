@@ -6,11 +6,11 @@
 /*   By: tsongtra <tsongtra@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/12 11:48:38 by tsongtra          #+#    #+#             */
-/*   Updated: 2024/09/12 18:28:00 by tsongtra         ###   ########.fr       */
+/*   Updated: 2024/09/12 21:22:33 by tsongtra         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "push_swap.h"
+#include "../includes/push_swap.h"
 
 static int	get_min(t_list **stack, int val)
 {

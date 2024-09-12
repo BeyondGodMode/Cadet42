@@ -6,11 +6,11 @@
 /*   By: tsongtra <tsongtra@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/10 13:56:16 by tsongtra          #+#    #+#             */
-/*   Updated: 2024/09/10 15:12:39 by tsongtra         ###   ########.fr       */
+/*   Updated: 2024/09/12 21:23:44 by tsongtra         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "push_swap.h"
+#include "../includes/push_swap.h"
 
 t_list	*ft_lstnew(int value)
 {

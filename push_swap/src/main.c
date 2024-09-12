@@ -6,11 +6,11 @@
 /*   By: tsongtra <tsongtra@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/06 10:45:52 by tsongtra          #+#    #+#             */
-/*   Updated: 2024/09/12 16:50:39 by tsongtra         ###   ########.fr       */
+/*   Updated: 2024/09/12 21:21:29 by tsongtra         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "push_swap.h"
+#include "../includes/push_swap.h"
 
 static void	check_dup(t_list **stack)
 {

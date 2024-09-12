@@ -6,7 +6,7 @@
 /*   By: tsongtra <tsongtra@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/25 17:21:23 by tsongtra          #+#    #+#             */
-/*   Updated: 2024/09/10 23:42:33 by tsongtra         ###   ########.fr       */
+/*   Updated: 2024/09/12 21:08:04 by tsongtra         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,13 +14,11 @@
 
 long	ft_atoi(const char *str)
 {
-	long	i;
 	int		sign;
 	long	count;
 
 	if (*str == '\0')
 		return (0);
-	i = 0;
 	count = 0;
 	sign = 1;
 	while (*str == '\t' || *str == '\n' || *str == '\v' || \
