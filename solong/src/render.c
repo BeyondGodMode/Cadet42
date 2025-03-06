@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   render.c                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: beyondq <beyondq@student.42.fr>            +#+  +:+       +#+        */
+/*   By: tsongtra <tsongtra@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/05 10:25:15 by beyondq           #+#    #+#             */
-/*   Updated: 2025/03/06 15:54:51 by beyondq          ###   ########.fr       */
+/*   Updated: 2025/03/06 18:10:39 by tsongtra         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,19 +15,19 @@
 void	ft_render_player(t_game *game, int y, int x)
 {
 	if (game->player_sprite == FRONT)
-		ft_render_sprite (game, game->player_front, y, x);
+		ft_render_sprite(game, game->player_front, y, x);
 	if (game->player_sprite == LEFT)
-		ft_render_sprite (game, game->player_left, y, x);
+		ft_render_sprite(game, game->player_left, y, x);
 	if (game->player_sprite == RIGHT)
-		ft_render_sprite (game, game->player_right, y, x);
+		ft_render_sprite(game, game->player_right, y, x);
 	if (game->player_sprite == BACK)
-		ft_render_sprite (game, game->player_back, y, x);
+		ft_render_sprite(game, game->player_back, y, x);
 }
 
 void	ft_render_sprite(t_game *game, t_image sprite, int line, int column)
 {
-	mlx_put_image_to_window (game->mlx_ptr, game->win_ptr, \
-	sprite.xpm_ptr, column * sprite.x, line * sprite.y);
+	mlx_put_image_to_window(game->mlx_ptr, game->win_ptr, sprite.xpm_ptr, column
+		* sprite.x, line * sprite.y);
 }
 
 void	ft_identify_sprite(t_game *game, int y, int x)
@@ -45,7 +45,6 @@ void	ft_identify_sprite(t_game *game, int y, int x)
 		ft_render_sprite(game, game->coins, y, x);
 	else if (parameter == MAP_EXIT)
 	{
-
 		if (game->map.coins == 0)
 			ft_render_sprite(game, game->open_exit, y, x);
 		else

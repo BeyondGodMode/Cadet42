@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   init_map.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: beyondq <beyondq@student.42.fr>            +#+  +:+       +#+        */
+/*   By: tsongtra <tsongtra@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/04 16:11:10 by beyondq           #+#    #+#             */
-/*   Updated: 2025/03/06 17:57:37 by beyondq          ###   ########.fr       */
+/*   Updated: 2025/03/06 18:12:44 by tsongtra         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,6 @@
 
 void	ft_check_input(int arc, char **arv, t_game *game)
 {
-	// int		arv_len;
 	char	*filename;
 
 	game->map_alloc = false;
@@ -26,15 +25,15 @@ void	ft_check_input(int arc, char **arv, t_game *game)
 	{
 		ft_error_msg("Map is missing.", game);
 	}
-	// arv_len = ft_strlen(arv[1]);
 	filename = ft_strrchr(arv[1], '/');
 	if (!filename)
-    	filename = arv[1];  // ถ้าไม่มี '/', ใช้ทั้ง string เป็นชื่อไฟล์
+		filename = arv[1];
 	else
-    	filename++;  // ขยับไปที่ชื่อไฟล์หลัง '/'
-	if (ft_strncmp(&filename[ft_strlen(filename) - 4], ".ber", 4) != 0 || ft_strlen(filename) == 4)
-		ft_error_msg("Map file extension should be .ber and filename should not be just .ber.", game);
-
+		filename++;
+	if (ft_strncmp(&filename[ft_strlen(filename) - 4], ".ber", 4) != 0
+		|| ft_strlen(filename) == 4)
+		ft_error_msg("Map file extension should be .ber \
+		and filename should not be just .ber.", game);
 }
 
 void	ft_check_line(char *map, t_game *game)
@@ -49,7 +48,7 @@ void	ft_check_line(char *map, t_game *game)
 	}
 	else if (map[ft_strlen(map) - 1] == '\n')
 	{
-		free (map);
+		free(map);
 		ft_error_msg("Invalid map an empty line right at the end.", game);
 	}
 	while (map[i + 1])
@@ -57,7 +56,7 @@ void	ft_check_line(char *map, t_game *game)
 		if (map[i] == '\n' && map[i + 1] == '\n')
 		{
 			free(map);
-			ft_error_msg("Invalid map an empty line\ 
+			ft_error_msg("Invalid map an empty line \
 			right at the middle.", game);
 		}
 		i++;
