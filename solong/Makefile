@@ -37,6 +37,7 @@ SRCS 			= main.c						\
 				utils.c						\
 				render.c					\
 				ft_handle_input.c			\
+				floodfill.c					\
 				mlx_closing.c
 
 # ==== สร้าง Path ของไฟล์ Object ====

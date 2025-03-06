@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   render.c                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: tsongtra <tsongtra@student.42.fr>          +#+  +:+       +#+        */
+/*   By: beyondq <beyondq@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/05 10:25:15 by beyondq           #+#    #+#             */
-/*   Updated: 2025/03/06 10:28:09 by tsongtra         ###   ########.fr       */
+/*   Updated: 2025/03/06 15:54:51 by beyondq          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,21 +35,27 @@ void	ft_identify_sprite(t_game *game, int y, int x)
 	char	parameter;
 
 	parameter = game->map.full[y][x];
-	if (parameter == WALL)
-		ft_render_sprite (game, game->wall, y, x);
+	if (parameter == PLAYER)
+		ft_render_player(game, y, x);
+	else if (parameter == WALL)
+		ft_render_sprite(game, game->wall, y, x);
 	else if (parameter == FLOOR)
-		ft_render_sprite (game, game->floor, y, x);
+		ft_render_sprite(game, game->floor, y, x);
 	else if (parameter == COINS)
-		ft_render_sprite (game, game->coins, y, x);
+		ft_render_sprite(game, game->coins, y, x);
 	else if (parameter == MAP_EXIT)
 	{
+
 		if (game->map.coins == 0)
-			ft_render_sprite (game, game->open_exit, y, x);
+			ft_render_sprite(game, game->open_exit, y, x);
 		else
-			ft_render_sprite (game, game->exit_closed, y, x);
+		{
+			if (game->map.player.x == x && game->map.player.y == y)
+				ft_render_player(game, y, x);
+			else
+				ft_render_sprite(game, game->exit_closed, y, x);
+		}
 	}
-	else if (parameter == PLAYER)
-		ft_render_player (game, y, x);
 }
 
 void	ft_print_move(t_game *game)

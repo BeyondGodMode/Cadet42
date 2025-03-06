@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   so_long.h                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: tsongtra <tsongtra@student.42.fr>          +#+  +:+       +#+        */
+/*   By: beyondq <beyondq@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/21 09:12:38 by beyondq           #+#    #+#             */
-/*   Updated: 2025/03/06 10:28:38 by tsongtra         ###   ########.fr       */
+/*   Updated: 2025/03/06 15:39:12 by beyondq          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -132,5 +132,9 @@ int		ft_close_game(t_game *game);
 void	ft_free_all(t_game *game);
 void	ft_destroy_images(t_game *game);
 void	ft_free_map(t_game *game);
+void	ft_check_path(t_game *game);
+void	init_visited(int **visited, int rows, int cols);
+void	flood_fill(char **map, int y, int x, int **visited, int rows, int cols);
+void	validate_reachable_objects(t_game *game, int **visited);
 
 #endif

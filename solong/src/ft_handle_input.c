@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_handle_input.c                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: tsongtra <tsongtra@student.42.fr>          +#+  +:+       +#+        */
+/*   By: beyondq <beyondq@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/05 10:37:29 by beyondq           #+#    #+#             */
-/*   Updated: 2025/03/06 10:25:52 by tsongtra         ###   ########.fr       */
+/*   Updated: 2025/03/06 15:47:26 by beyondq          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,14 +23,17 @@ void	ft_player_move(t_game *game, int new_y, int new_x, int player_sprite)
 	if (game->map.full[new_y][new_x] == MAP_EXIT && game->map.coins == 0)
 		ft_victory(game);
 	else if ((game->map.full[new_y][new_x] == FLOOR)
-	|| (game->map.full[new_y][new_x] == COINS))
+	|| (game->map.full[new_y][new_x] == COINS)
+	|| (game->map.full[new_y][new_x] == MAP_EXIT))
 	{
-		game->map.full[last_y][last_x] = FLOOR;
+		if (game->map.full[last_y][last_x] != MAP_EXIT)
+			game->map.full[last_y][last_x] = FLOOR;
 		if (game->map.full[new_y][new_x] == COINS)
 			game->map.coins--;
 		game->map.player.x = new_x;
 		game->map.player.y = new_y;
-		game->map.full[new_y][new_x] = PLAYER;
+		if (game->map.full[new_y][new_x] != MAP_EXIT)
+			game->map.full[new_y][new_x] = PLAYER;
 		game->movements++;
 		ft_render_map(game);
 	}
