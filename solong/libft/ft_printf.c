@@ -3,35 +3,35 @@
 /*                                                        :::      ::::::::   */
 /*   ft_printf.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: beyondq <beyondq@student.42.fr>            +#+  +:+       +#+        */
+/*   By: tsongtra <tsongtra@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/27 16:12:32 by tsongtra          #+#    #+#             */
-/*   Updated: 2025/03/05 08:58:56 by beyondq          ###   ########.fr       */
+/*   Updated: 2025/03/06 10:23:55 by tsongtra         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-size_t print_type(va_list args, const char c)
+size_t	print_type(va_list args, const char c)
 {
-    size_t length = 0;
+	size_t	length;
 
-    if (c == 'c')
-    	length = print_char(va_arg(args, int));
-    else if (c == 's')
-        length = print_string(va_arg(args, char *));
-    else if (c == 'd' || c == 'i')
-        length = print_int(va_arg(args, int));
-    else if (c == '%')
-        length = print_percent();
-    else if (c == 'x' || c == 'X')
-        length = print_hex(va_arg(args, unsigned int), c);
-    else if (c == 'p')
-        length = print_pointer(va_arg(args, unsigned long));
-    else if (c == 'u')
-        length = print_uint(va_arg(args, unsigned int));
-
-    return length;
+	length = 0;
+	if (c == 'c')
+		length = print_char(va_arg(args, int));
+	else if (c == 's')
+		length = print_string(va_arg(args, char *));
+	else if (c == 'd' || c == 'i')
+		length = print_int(va_arg(args, int));
+	else if (c == '%')
+		length = print_percent();
+	else if (c == 'x' || c == 'X')
+		length = print_hex(va_arg(args, unsigned int), c);
+	else if (c == 'p')
+		length = print_pointer(va_arg(args, unsigned long));
+	else if (c == 'u')
+		length = print_uint(va_arg(args, unsigned int));
+	return (length);
 }
 
 int	ft_printf(const char *str, ...)

@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   init_game.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: beyondq <beyondq@student.42.fr>            +#+  +:+       +#+        */
+/*   By: tsongtra <tsongtra@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/05 01:43:46 by beyondq           #+#    #+#             */
-/*   Updated: 2025/03/05 12:16:59 by beyondq          ###   ########.fr       */
+/*   Updated: 2025/03/06 10:26:15 by tsongtra         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,6 +21,7 @@ void	ft_init_vars(t_game *game)
 	game->map.columns = ft_strlen(game->map.full[0]);
 	game->player_sprite = RIGHT;
 }
+
 void	ft_init_mlx(t_game *game)
 {
 	game->mlx_ptr = mlx_init();
@@ -37,6 +38,7 @@ void	ft_init_mlx(t_game *game)
 		ft_error_msg("can't create the Window.", game);
 	}
 }
+
 t_image	ft_new_sprite(void *mlx, char *path, t_game *game)
 {
 	t_image	sprite;
@@ -46,6 +48,7 @@ t_image	ft_new_sprite(void *mlx, char *path, t_game *game)
 		ft_error_msg("can't find a sprite.", game);
 	return (sprite);
 }
+
 void	ft_init_sprites(t_game *game)
 {
 	void	*mlx;

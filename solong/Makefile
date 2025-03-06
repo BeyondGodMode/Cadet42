@@ -61,7 +61,4 @@ fclean:
 re:				fclean all
 
 
-run:			${NAME}
-				${VALGRIND} ./${NAME} maps/valid/map1.ber
-
-.PHONY:			all clean fclean re rebonus valgrind run run_bonus
+.PHONY:			all clean fclean re valgrind

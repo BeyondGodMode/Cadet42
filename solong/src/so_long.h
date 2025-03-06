@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   so_long.h                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: beyondq <beyondq@student.42.fr>            +#+  +:+       +#+        */
+/*   By: tsongtra <tsongtra@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/21 09:12:38 by beyondq           #+#    #+#             */
-/*   Updated: 2025/03/06 08:49:36 by beyondq          ###   ########.fr       */
+/*   Updated: 2025/03/06 10:28:38 by tsongtra         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -56,7 +56,6 @@
 # define PLAYER_BACK_XPM	"sprites/player/Back.xpm"
 # define OPEN_EXIT_XPM		"sprites/Doors-open.xpm"
 # define EXIT_CLOSED_XPM	"sprites/Doors-Close.xpm"
-
 
 typedef enum e_bool
 {
@@ -135,4 +134,3 @@ void	ft_destroy_images(t_game *game);
 void	ft_free_map(t_game *game);
 
 #endif
-

@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   init_map.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: beyondq <beyondq@student.42.fr>            +#+  +:+       +#+        */
+/*   By: tsongtra <tsongtra@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/04 16:11:10 by beyondq           #+#    #+#             */
-/*   Updated: 2025/03/05 01:37:33 by beyondq          ###   ########.fr       */
+/*   Updated: 2025/03/06 10:27:00 by tsongtra         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 void	ft_check_input(int arc, char **arv, t_game *game)
 {
-	int arv_len;
+	int	arv_len;
 
 	game->map_alloc = false;
 	if (arc > 2)
@@ -29,6 +29,7 @@ void	ft_check_input(int arc, char **arv, t_game *game)
 	if (!ft_strnstr(&arv[1][arv_len - 4], ".ber", 4))
 		ft_error_msg("Map file extention should be .ber.", game);
 }
+
 void	ft_check_line(char *map, t_game *game)
 {
 	int	i;
@@ -49,11 +50,13 @@ void	ft_check_line(char *map, t_game *game)
 		if (map[i] == '\n' && map[i + 1] == '\n')
 		{
 			free(map);
-			ft_error_msg("Invalid map an empty line right at the middle.", game);
+			ft_error_msg("Invalid map an empty line \
+			right at the middle.", game);
 		}
 		i++;
 	}
 }
+
 void	ft_init_map(t_game *game, char *argv)
 {
 	char	*map_temp;

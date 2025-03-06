@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   render.c                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: beyondq <beyondq@student.42.fr>            +#+  +:+       +#+        */
+/*   By: tsongtra <tsongtra@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/05 10:25:15 by beyondq           #+#    #+#             */
-/*   Updated: 2025/03/05 12:13:26 by beyondq          ###   ########.fr       */
+/*   Updated: 2025/03/06 10:28:09 by tsongtra         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,8 +29,9 @@ void	ft_render_sprite(t_game *game, t_image sprite, int line, int column)
 	mlx_put_image_to_window (game->mlx_ptr, game->win_ptr, \
 	sprite.xpm_ptr, column * sprite.x, line * sprite.y);
 }
+
 void	ft_identify_sprite(t_game *game, int y, int x)
-{	
+{
 	char	parameter;
 
 	parameter = game->map.full[y][x];
@@ -50,6 +51,7 @@ void	ft_identify_sprite(t_game *game, int y, int x)
 	else if (parameter == PLAYER)
 		ft_render_player (game, y, x);
 }
+
 void	ft_print_move(t_game *game)
 {
 	char	*movements;
