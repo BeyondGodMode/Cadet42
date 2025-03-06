@@ -6,7 +6,7 @@
 /*   By: tsongtra <tsongtra@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/06 13:21:18 by beyondq           #+#    #+#             */
-/*   Updated: 2025/03/06 18:37:14 by tsongtra         ###   ########.fr       */
+/*   Updated: 2025/03/06 18:40:22 by tsongtra         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,7 @@ void	validate_reachable_objects(t_game *game, int **visited)
 		while (x < game->map.columns)
 		{
 			if ((game->map.full[y][x] == COINS
-					|| game->map.full[y][x] == MAP_EXIT) && visited[y][x] == 0)
+				|| game->map.full[y][x] == MAP_EXIT) && visited[y][x] == 0)
 			{
 				ft_error_msg("Error: There is an unreachable coin or exit.",
 					game);
@@ -43,7 +43,7 @@ void	flood_fill(t_game *game, int y, int x, int **visited)
 
 	map = game->map.full;
 	rows = game->map.rows;
-    cols = game->map.columns;
+	cols = game->map.columns;
 	if (x < 0 || x >= cols || y < 0 || y >= rows || visited[y][x]
 		|| map[y][x] == WALL)
 		return ;
