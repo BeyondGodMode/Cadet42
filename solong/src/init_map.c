@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   init_map.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: tsongtra <tsongtra@student.42.fr>          +#+  +:+       +#+        */
+/*   By: beyondq <beyondq@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/04 16:11:10 by beyondq           #+#    #+#             */
-/*   Updated: 2025/03/06 10:27:00 by tsongtra         ###   ########.fr       */
+/*   Updated: 2025/03/06 17:57:37 by beyondq          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,8 @@
 
 void	ft_check_input(int arc, char **arv, t_game *game)
 {
-	int	arv_len;
+	// int		arv_len;
+	char	*filename;
 
 	game->map_alloc = false;
 	if (arc > 2)
@@ -25,9 +26,15 @@ void	ft_check_input(int arc, char **arv, t_game *game)
 	{
 		ft_error_msg("Map is missing.", game);
 	}
-	arv_len = ft_strlen(arv[1]);
-	if (!ft_strnstr(&arv[1][arv_len - 4], ".ber", 4))
-		ft_error_msg("Map file extention should be .ber.", game);
+	// arv_len = ft_strlen(arv[1]);
+	filename = ft_strrchr(arv[1], '/');
+	if (!filename)
+    	filename = arv[1];  // ถ้าไม่มี '/', ใช้ทั้ง string เป็นชื่อไฟล์
+	else
+    	filename++;  // ขยับไปที่ชื่อไฟล์หลัง '/'
+	if (ft_strncmp(&filename[ft_strlen(filename) - 4], ".ber", 4) != 0 || ft_strlen(filename) == 4)
+		ft_error_msg("Map file extension should be .ber and filename should not be just .ber.", game);
+
 }
 
 void	ft_check_line(char *map, t_game *game)
@@ -50,7 +57,7 @@ void	ft_check_line(char *map, t_game *game)
 		if (map[i] == '\n' && map[i + 1] == '\n')
 		{
 			free(map);
-			ft_error_msg("Invalid map an empty line \
+			ft_error_msg("Invalid map an empty line\ 
 			right at the middle.", game);
 		}
 		i++;
@@ -78,6 +85,8 @@ void	ft_init_map(t_game *game, char *argv)
 		game->map.rows++;
 	}
 	close(map_fd);
+	if (game->map.rows == 0)
+		ft_error_msg("empty maps", game);
 	ft_check_line(map_temp, game);
 	game->map.full = ft_split(map_temp, '\n');
 	game->map_alloc = true;

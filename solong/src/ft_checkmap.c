@@ -6,7 +6,7 @@
 /*   By: beyondq <beyondq@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/05 08:55:31 by beyondq           #+#    #+#             */
-/*   Updated: 2025/03/06 16:01:36 by beyondq          ###   ########.fr       */
+/*   Updated: 2025/03/06 16:53:39 by beyondq          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,8 +16,8 @@ void	ft_check_parameters(t_game *game)
 {
 	if (game->map.coins == 0)
 		ft_error_msg("Invalid map no Coins!", game);
-	else if (game->map.exit == 0)
-		ft_error_msg("Invalid map no Exit.", game);
+	else if (game->map.exit != 1)
+		ft_error_msg("Invalid map Exit gate.", game);
 	else if (game->map.players != 1)
 		ft_error_msg("Invalid map player should be 1.", game);
 }
